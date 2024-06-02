@@ -1,0 +1,56 @@
+<div class="container pt-5 mb-5">
+    <form name="shoeFrom" ng-submit="submitForm()" novalidate>
+        <h3 class="d-flex mb-3">
+            <span class="me-auto">Add your shoe data</span>
+        </h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="title" class="col-form-label">Name of Shoe :</label>
+                    <input type="text" class="form-control" name="title" id="title" ng-model="title"
+                        ng-required="true" />
+                    <div ng-show="shoeFrom.title.$error && shoeFrom.title.$touched && shoeFrom.title.$invalid "
+                        class="text-danger"> Shoe name is required.</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="brand" class="form-label">Brand :</label>
+                        <input type="text" class="form-control" name="brand" id="brand" ng-model="brand"
+                            ng-required="true" />
+                        <div ng-show="shoeFrom.brand.$error && shoeFrom.brand.$touched && shoeFrom.brand.$invalid "
+                            class="text-danger">Brand Name is required.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="category" class="form-label">Category</label>
+                        <select class="form-select" name="category" id="category" ng-model="category"
+                            ng-change="updateButton()" ng-required="true">
+                            <option value="" disabled>Select Category</option>
+                            <option value="Running">Running</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Athletic">Athletic</option>
+                        </select>
+                        <div ng-show="shoeFrom.category.$error && shoeFrom.category.$touched && shoeFrom.category.$invalid "
+                            class="text-danger">Category is required.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="price" class="form-label">Price :</label>
+                        <input type="text" class="form-control" name="price" id="price" ng-model="price"
+                            ng-required="true" />
+                        <div ng-show="shoeFrom.price.$error && shoeFrom.price.$touched && shoeFrom.price.$invalid "
+                            class="text-danger">Price is required.</div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="fimage" class="form-label">Feature Image</label>
+                        <input type="text" class="form-control" name="fimage" id="fimage"
+                            placeholder="Provide Image relative path " ng-model="featuredImage" ng-required="true">
+                        <div ng-show="shoeFrom.fimage.$error && shoeFrom.fimage.$touched && shoeFrom.fimage.$invalid"
+                            class="text-danger">Featured-Image is required.</div>
+                    </div>
+                    <a href="#!/shoes" class="btn btn-danger me-2 mt-5 mb-3"> Cancel </a>
+                    <button type="submit" class="btn  btn-dark" ng-disabled="shoeFrom.$invalid">Save changes</button>
+                </div>
+            </div>
+    </form>
+</div>

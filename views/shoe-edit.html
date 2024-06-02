@@ -1,0 +1,66 @@
+<div class="container pt-5 mb-5" ng-controller="shoeEditCtrl">
+  <h3 class="mb-3">Edit shoe</h3>
+  <div class="row mb-3 ">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">Edit Feature Image</div>
+        <img src="{{shoes[shoeId-1].image}}" class="card-img-bottom" alt="..." />
+        <div class="card-body">
+          <form action="#!/shoes" ng-submit="submitForm()">
+            <div class="mb-3">
+              <label for="image" class="form-label">Feature Image</label>
+              <input class="form-control form-control-sm" type="file" id="image" style="height: 30px !important;" />
+            </div>
+            <button type="submit" class="btn btn-sm btn-dark">
+              Save changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <form action="#!/shoes" name="shoeEditFrom" ng-submit="submitForm()">
+        <input type="hidden" id="id" value="{{shoes[shoeId-1].id}}" />
+        <div class="card">
+          <div class="card-header">Edit your shoe Data</div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="title" class="col-form-label">Title :</label>
+              <input type="text" class="form-control" name="title" id="title" ng-model="shoes[shoeId-1].title"
+                ng-required="true" />
+              <div ng-show="shoeEditFrom.title.$error && shoeEditFrom.title.$touched && shoeEditFrom.title.$invalid "
+                class="text-danger"> shoe Title is required.</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="brand" class="form-label">Brand :</label>
+                <input type="text" class="form-control" name="brand" id="brand" ng-model="shoes[shoeId-1].brand"
+                  ng-required="true" />
+                <div ng-show="shoeEditFrom.brand.$error && shoeEditFrom.brand.$touched && shoeEditFrom.brand.$invalid "
+                  class="text-danger">brand Name is required.</div>
+              </div>
+              <div class="col-md-4">
+                <label for="category" class="form-label">Category :</label>
+                <input type="text" class="form-control" name="category" id="category"
+                  ng-model="shoes[shoeId-1].category" ng-required="true" />
+                <div
+                  ng-show="shoeEditFrom.category.$error && shoeEditFrom.category.$touched && shoeEditFrom.category.$invalid "
+                  class="text-danger">category is required.</div>
+              </div>
+              <div class="col-md-4">
+                <label for="price" class="form-label">Price :</label>
+                <input type="text" class="form-control" name="price" id="price" ng-model="shoes[shoeId-1].price"
+                  ng-required="true" />
+                <div ng-show="shoeEditFrom.price.$error && shoeEditFrom.price.$touched && shoeEditFrom.price.$invalid "
+                  class="text-danger">price is required.</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-sm btn-dark" ng-disabled="shoeEditFrom.$invalid">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

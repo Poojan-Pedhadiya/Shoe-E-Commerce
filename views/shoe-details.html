@@ -1,0 +1,27 @@
+<div class="container pt-5 mb-5">
+  <div class="row mb-4">
+    <div class="col">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">{{shoes[shoeId-1].title}}</h3>
+        <a href="#!/shoes" class="btn btn-outline-danger"><i class="fa-solid fa-xmark"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="card mb-4 p-3">
+        <img src="{{shoes[shoeId-1].image}}" class="card-img-top" alt="shoe Cover">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card mb-6 p-3">
+        <div class="card-body">
+          <p class="card-text"><strong>Name:</strong> {{shoes[shoeId-1].title}}</p>
+          <p class="card-text"><strong>Brand:</strong> {{shoes[shoeId-1].brand}}</p>
+          <p class="card-text"><strong>Category:</strong> {{shoes[shoeId-1].category}}</p>
+          <p class="card-text"><strong>Price:</strong> ₹{{shoes[shoeId-1].price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
